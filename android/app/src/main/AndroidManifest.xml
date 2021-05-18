@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.byjhanvi.instagram_clone">
+   <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="instagram_clone"
+        android:label="Instagram"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
