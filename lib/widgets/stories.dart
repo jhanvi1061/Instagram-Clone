@@ -15,7 +15,10 @@ class StoryWidget extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Color(0xFF9B2282), Color(0xFFEEA863)],
+                colors: [
+                  Color(0xFF9B2282),
+                  Color(0xFFEEA863),
+                ],
               ),
             ),
             child: Padding(
