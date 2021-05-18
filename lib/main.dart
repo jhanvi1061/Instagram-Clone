@@ -10,8 +10,8 @@ void main() {
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
       statusBarBrightness: Brightness.dark,
-      systemNavigationBarColor: Colors.transparent,
-      systemNavigationBarIconBrightness: Brightness.dark,
+      // systemNavigationBarColor: Colors.transparent,
+      // systemNavigationBarIconBrightness: Brightness.dark,
       systemNavigationBarDividerColor: Colors.grey.withOpacity(0.1),
     ),
   );
