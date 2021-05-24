@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:instagram_clone/screens/activity_screen.dart';
-import 'package:instagram_clone/screens/add_screen.dart';
-import 'package:instagram_clone/screens/profile_screen.dart';
-import 'package:instagram_clone/screens/search_screen.dart';
 
+import 'package:flutter/material.dart';
+
+import '../screens/activity_screen.dart';
+import '../screens/add_screen.dart';
+import '../screens/profile_screen.dart';
+import '../screens/search_screen.dart';
 import '../screens/feed_screen.dart';
 
 class HomeScreen extends StatefulWidget {

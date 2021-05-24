@@ -17,7 +17,7 @@ class FeedScreen extends StatelessWidget {
           children: [
             SvgPicture.asset(
               "assets/new_post.svg",
-              width: 24,
+              width: 23,
             ),
             Image.asset(
               "assets/insta_logo.png",
@@ -25,7 +25,7 @@ class FeedScreen extends StatelessWidget {
             ),
             SvgPicture.asset(
               "assets/messenger.svg",
-              width: 24,
+              width: 23,
             ),
           ],
         ),
