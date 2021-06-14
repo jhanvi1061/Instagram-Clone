@@ -1,13 +1,18 @@
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/providers/post.dart';
+import 'package:instagram_clone/providers/story.dart';
+import 'package:provider/provider.dart';
 
-import '../widgets/posts.dart';
-import '../widgets/stories.dart';
+import '../widgets/post_widget.dart';
+import '../widgets/story_widget.dart';
 
 class FeedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final storyData = Provider.of<StoryProvider>(context);
+    final postsData = Provider.of<PostProvider>(context);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 56,
@@ -88,11 +93,13 @@ class FeedScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Row(
-                    children: List.generate(
-                      5,
-                      (index) => StoryWidget(),
-                    ),
+                  Column(
+                    children: [
+                      ListView.builder(
+                        itemCount: storyData.items,
+                        itemBuilder: (context, i) => StoryWidget(),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -102,10 +109,12 @@ class FeedScreen extends StatelessWidget {
               thickness: 1,
             ),
             Column(
-              children: List.generate(
-                5,
-                (index) => PostWidget(),
-              ),
+              children: [
+                ListView.builder(
+                  itemCount: postsData.itemCount,
+                  itemBuilder: (context, i) => PostWidget(),
+                ),
+              ],
             ),
           ],
         ),

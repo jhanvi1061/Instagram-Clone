@@ -1,3 +1,7 @@
+import 'package:instagram_clone/providers/post.dart';
+import 'package:instagram_clone/providers/story.dart';
+import 'package:provider/provider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -11,7 +15,7 @@ void main() {
       statusBarIconBrightness: Brightness.dark,
       statusBarBrightness: Brightness.dark,
       // systemNavigationBarColor: Colors.transparent,
-      // systemNavigationBarIconBrightness: Brightness.dark,
+      systemNavigationBarIconBrightness: Brightness.dark,
       systemNavigationBarDividerColor: Colors.grey.withOpacity(0.1),
     ),
   );
@@ -26,15 +30,25 @@ class Instagram extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print("Build() - Instagram");
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Instagram',
-      home: HomeScreen(),
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(color: Colors.white),
-        bottomNavigationBarTheme:
-            BottomNavigationBarThemeData(backgroundColor: Colors.white),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => StoryProvider()
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PostProvider()
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Instagram',
+        home: HomeScreen(),
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+          appBarTheme: AppBarTheme(color: Colors.white),
+          bottomNavigationBarTheme:
+              BottomNavigationBarThemeData(backgroundColor: Colors.white),
+        ),
       ),
     );
   }
