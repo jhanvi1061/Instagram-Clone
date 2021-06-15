@@ -36,97 +36,97 @@ class FeedScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: <Widget>[
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(right: 20, left: 15, bottom: 10),
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          width: 65,
-                          height: 65,
-                          child: Stack(
-                            children: <Widget>[
-                              Container(
-                                width: 66,
-                                height: 66,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                    image: AssetImage("assets/jhanvi.JPG"),
-                                    fit: BoxFit.cover,
-                                  ),
+      body: Column(
+        children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.only(right: 20, left: 15, bottom: 10),
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 65,
+                        height: 65,
+                        child: Stack(
+                          children: [
+                            Container(
+                              width: 66,
+                              height: 66,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage("assets/jhanvi.JPG"),
+                                  fit: BoxFit.cover,
                                 ),
                               ),
-                              Positioned(
-                                bottom: 0,
-                                right: 0,
-                                child: Container(
-                                  width: 19,
-                                  height: 19,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Colors.white),
-                                  child: Icon(
-                                    Icons.add_circle,
-                                    color: Color(0xFF0494F5),
-                                    size: 19,
-                                  ),
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              right: 0,
+                              child: Container(
+                                width: 19,
+                                height: 19,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.white),
+                                child: Icon(
+                                  Icons.add_circle,
+                                  color: Color(0xFF0494F5),
+                                  size: 19,
                                 ),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 9),
-                        Center(
-                          child: Text(
-                            "Your Story",
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 400,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: storyData.items,
-                          itemBuilder: (context, i) => StoryWidget(),
+                              ),
+                            )
+                          ],
                         ),
                       ),
+                      SizedBox(height: 9),
+                      Center(
+                        child: Text(
+                          "Your Story",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 12),
+                        ),
+                      )
                     ],
                   ),
-                ],
-              ),
-            ),
-            Divider(
-              color: Colors.grey.withOpacity(0.1),
-              thickness: 1,
-            ),
-            Column(
-              children: [
-                SizedBox(
-                  height: 400,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: postsData.itemCount,
-                    itemBuilder: (context, i) => PostWidget(),
-                  ),
                 ),
+                ...storyData.stories
+                    .map(
+                      (story) => ChangeNotifierProvider.value(
+                        value: story,
+                        child: StoryWidget(),
+                      ),
+                    )
+                    .toList(),
+                // ListView.builder(
+                //   shrinkWrap: true,
+                //   itemCount: storyData.stories.length,
+                //   itemBuilder: (context, i) => ChangeNotifierProvider.value(
+                //     value: storyData.stories[i],
+                //     child: StoryWidget(),
+                //   ),
+                // ),
               ],
             ),
-          ],
-        ),
+          ),
+          Divider(
+            color: Colors.grey.withOpacity(0.1),
+            thickness: 1,
+          ),
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: postsData.posts.length,
+              itemBuilder: (context, i) => ChangeNotifierProvider.value(
+                value: postsData.posts[i],
+                child: PostWidget(),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
