@@ -6,33 +6,22 @@ import 'package:flutter/material.dart';
 import '../providers/post.dart';
 
 class PostWidget extends StatefulWidget {
-  // final String id;
-  // final String postOwnerName;
-  // final String profileImg;
-  // final String postImg;
-  // final String caption;
-
-  // PostWidget({
-  //   this.id,
-  //   this.postOwnerName,
-  //   this.profileImg,
-  //   this.postImg,
-  //   this.caption,
-  // });
-
   @override
   _PostWidgetState createState() => _PostWidgetState();
 }
 
 class _PostWidgetState extends State<PostWidget> {
-  Icon icon = Icon(Icons.favorite_border, size: 25);
+  var icon = SvgPicture.asset(
+    "assets/heart.svg",
+    width: 22,
+  );
 
   void changeIcon() {
     setState(() {
-      icon = Icon(
-        Icons.favorite,
+      icon = SvgPicture.asset(
+        "assets/heart_active.svg",
+        width: 22,
         color: Colors.red,
-        size: 25,
       );
     });
   }
@@ -43,14 +32,14 @@ class _PostWidgetState extends State<PostWidget> {
     final posts = Provider.of<Post>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
+      children: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
+            children: [
               Row(
-                children: <Widget>[
+                children: [
                   Container(
                     width: 32,
                     height: 32,
@@ -73,13 +62,16 @@ class _PostWidgetState extends State<PostWidget> {
             ],
           ),
         ),
-        Container(
-          width: double.infinity,
-          height: 340,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(posts.postImg),
-              fit: BoxFit.cover,
+        GestureDetector(
+          onDoubleTap: () => changeIcon(),
+          child: Container(
+            width: double.infinity,
+            height: 340,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(posts.postImg),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
@@ -93,7 +85,7 @@ class _PostWidgetState extends State<PostWidget> {
                 children: <Widget>[
                   GestureDetector(
                     child: icon,
-                    onDoubleTap: () => changeIcon(),
+                    onTap: () => changeIcon(),
                   ),
                   SizedBox(width: 15),
                   SvgPicture.asset(
@@ -194,36 +186,37 @@ class _PostWidgetState extends State<PostWidget> {
         ),
         SizedBox(height: 12),
         Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Container(
-                      width: 30,
-                      height: 30,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: NetworkImage(posts.profileImg),
-                          fit: BoxFit.cover,
-                        ),
+          padding: EdgeInsets.only(left: 15, right: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 30,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: NetworkImage(posts.profileImg),
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    SizedBox(width: 10),
-                    Text(
-                      "Add a comment...",
-                      style: TextStyle(
-                        color: Colors.black.withOpacity(0.4),
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                      ),
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    "Add a comment...",
+                    style: TextStyle(
+                      color: Colors.black.withOpacity(0.4),
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
                     ),
-                  ],
-                ),
-              ],
-            )),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
         SizedBox(height: 8),
         Padding(
           padding: EdgeInsets.only(left: 15, right: 15),

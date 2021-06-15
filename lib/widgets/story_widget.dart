@@ -5,12 +5,6 @@ import 'package:flutter/material.dart';
 import '../providers/story.dart';
 
 class StoryWidget extends StatelessWidget {
-  // final String id;
-  // final String username;
-  // final String imageUrl;
-
-  // StoryWidget({this.id, this.username, this.imageUrl});
-
   @override
   Widget build(BuildContext context) {
     print("Build() - StoryWidget");
@@ -18,7 +12,7 @@ class StoryWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 10, bottom: 10),
       child: Column(
-        children: <Widget>[
+        children: [
           Container(
             width: 70,
             height: 70,
