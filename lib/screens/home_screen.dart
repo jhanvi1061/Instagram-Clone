@@ -79,12 +79,46 @@ class _HomeScreenState extends State<HomeScreen> {
             label: "Activity",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              _selectedPageIndex == 4
-                  ? "assets/discover_people.svg"
-                  : "assets/discover_people.svg",
-              width: 23,
-            ),
+            // icon: SvgPicture.asset(
+            //   _selectedPageIndex == 4
+            //       ? "assets/discover_people.svg"
+            //       : "assets/discover_people.svg",
+            //   width: 23,
+            // ),
+            icon: _selectedPageIndex == 4
+                ? Container(
+                    width: 32,
+                    height: 32,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 1.8,
+                      ),
+                    ),
+                    child: Container(
+                      width: 28,
+                      height: 28,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: AssetImage("assets/jhanvi.JPG"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  )
+                : Container(
+                    width: 28,
+                    height: 28,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage("assets/jhanvi.JPG"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
             label: "Profile",
           ),
         ],
