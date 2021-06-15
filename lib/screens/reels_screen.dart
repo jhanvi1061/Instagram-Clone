@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AddScreen extends StatelessWidget {
+class ReelsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print("Build() - AddScreen");
+    print("Build() - ReelsScreen");
     return Center(
-      child: Text("Add Screen"),
+      child: Text("Reels Screen"),
     );
   }
 }
