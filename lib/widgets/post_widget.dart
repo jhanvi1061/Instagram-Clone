@@ -80,9 +80,9 @@ class _PostWidgetState extends State<PostWidget> {
           padding: const EdgeInsets.only(left: 15, right: 15, top: 2),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
+            children: [
               Row(
-                children: <Widget>[
+                children: [
                   GestureDetector(
                     child: icon,
                     onTap: () => changeIcon(),
