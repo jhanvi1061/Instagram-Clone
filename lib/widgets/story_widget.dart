@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:instagram_clone/providers/story.dart';
 import 'package:provider/provider.dart';
+
+import 'package:flutter/material.dart';
+
+import '../providers/story.dart';
 
 class StoryWidget extends StatelessWidget {
   // final String id;
@@ -11,6 +13,7 @@ class StoryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("Build() - StoryWidget");
     final story = Provider.of<Story>(context);
     return Padding(
       padding: const EdgeInsets.only(right: 10, bottom: 10),

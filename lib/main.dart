@@ -1,10 +1,10 @@
-import 'package:instagram_clone/providers/post.dart';
-import 'package:instagram_clone/providers/story.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import './providers/post.dart';
+import './providers/story.dart';
 import './screens/home_screen.dart';
 
 void main() {
@@ -32,12 +32,8 @@ class Instagram extends StatelessWidget {
     print("Build() - Instagram");
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => StoryProvider()
-        ),
-        ChangeNotifierProvider(
-          create: (context) => PostProvider()
-        ),
+        ChangeNotifierProvider(create: (context) => StoryProvider()),
+        ChangeNotifierProvider(create: (context) => PostProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

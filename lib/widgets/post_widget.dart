@@ -1,8 +1,9 @@
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:instagram_clone/providers/post.dart';
+
+import '../providers/post.dart';
 
 class PostWidget extends StatefulWidget {
   // final String id;
@@ -38,6 +39,7 @@ class _PostWidgetState extends State<PostWidget> {
 
   @override
   Widget build(BuildContext context) {
+    print("Build() - PostWidget");
     final posts = Provider.of<Post>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
