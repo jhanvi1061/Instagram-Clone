@@ -1,16 +1,17 @@
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'package:flutter/material.dart';
-import 'package:instagram_clone/providers/post.dart';
-import 'package:instagram_clone/providers/story.dart';
 import 'package:provider/provider.dart';
 
+import 'package:flutter/material.dart';
+
+import '../providers/post.dart';
+import '../providers/story.dart';
 import '../widgets/post_widget.dart';
 import '../widgets/story_widget.dart';
 
 class FeedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print("Build() - FeedScreen");
     final storyData = Provider.of<StoryProvider>(context);
     final postsData = Provider.of<PostProvider>(context);
     return Scaffold(
@@ -93,11 +94,15 @@ class FeedScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Column(
+                  Row(
                     children: [
-                      ListView.builder(
-                        itemCount: storyData.items,
-                        itemBuilder: (context, i) => StoryWidget(),
+                      SizedBox(
+                        width: 400,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: storyData.items,
+                          itemBuilder: (context, i) => StoryWidget(),
+                        ),
                       ),
                     ],
                   ),
@@ -110,9 +115,13 @@ class FeedScreen extends StatelessWidget {
             ),
             Column(
               children: [
-                ListView.builder(
-                  itemCount: postsData.itemCount,
-                  itemBuilder: (context, i) => PostWidget(),
+                SizedBox(
+                  height: 400,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: postsData.itemCount,
+                    itemBuilder: (context, i) => PostWidget(),
+                  ),
                 ),
               ],
             ),
