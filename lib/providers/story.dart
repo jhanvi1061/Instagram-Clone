@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Story {
+class Story with ChangeNotifier {
   final String id;
   final String username;
   final String imageUrl;
@@ -53,8 +53,4 @@ class StoryProvider with ChangeNotifier {
   ];
 
   List<Story> get stories => [..._stories];
-
-  int get items => _stories.length;
-
-  notifyListeners();
 }

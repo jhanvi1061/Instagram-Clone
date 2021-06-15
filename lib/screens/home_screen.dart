@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/activity_screen.dart';
-import '../screens/add_screen.dart';
+import '../screens/reels_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/search_screen.dart';
 import '../screens/feed_screen.dart';
@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List _pages = [
     FeedScreen(),
     SearhScreen(),
-    AddScreen(),
+    ReelsScreen(),
     ActivityScreen(),
     ProfileScreen(),
   ];
@@ -63,10 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              _selectedPageIndex == 2
-                  ? "assets/gallery.svg"
-                  : "assets/new_post.svg",
+              _selectedPageIndex == 2 ? "assets/video.svg" : "assets/clip.svg",
               width: 23,
+              color: Colors.black,
             ),
             label: "Reels",
           ),

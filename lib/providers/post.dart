@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Post {
+class Post with ChangeNotifier {
   final String id;
   final String postOwnerName;
   final String profileImg;
@@ -25,7 +25,7 @@ class PostProvider with ChangeNotifier {
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p7.webp',
       postImg:
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p7.webp',
-      caption: "Good day",
+      caption: " Good day",
     ),
     Post(
       id: "2",
@@ -34,7 +34,7 @@ class PostProvider with ChangeNotifier {
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p8.webp',
       postImg:
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p8.webp',
-      caption: "Good day",
+      caption: " Good day",
     ),
     Post(
       id: "3",
@@ -43,7 +43,7 @@ class PostProvider with ChangeNotifier {
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p9.webp',
       postImg:
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p9.webp',
-      caption: "Good day",
+      caption: " Good day",
     ),
     Post(
       id: "4",
@@ -52,7 +52,7 @@ class PostProvider with ChangeNotifier {
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p10.webp',
       postImg:
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p10.webp',
-      caption: "Good day",
+      caption: " Good day",
     ),
     Post(
       id: "5",
@@ -61,7 +61,7 @@ class PostProvider with ChangeNotifier {
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p11.webp',
       postImg:
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p11.webp',
-      caption: "Good day",
+      caption: " Good day",
     ),
     Post(
       id: "6",
@@ -70,13 +70,9 @@ class PostProvider with ChangeNotifier {
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p12.webp',
       postImg:
           'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p12.webp',
-      caption: "Good day",
+      caption: " Good day",
     ),
   ];
 
   List<Post> get posts => [..._posts];
-
-  int get itemCount => _posts.length;
-
-  notifyListeners();
 }
