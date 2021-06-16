@@ -87,8 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
             // ),
             icon: _selectedPageIndex == 4
                 ? Container(
-                    width: 32,
-                    height: 32,
+                    width: 28,
+                    height: 28,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
@@ -97,8 +97,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     child: Container(
-                      width: 28,
-                      height: 28,
+                      width: 27,
+                      height: 27,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
