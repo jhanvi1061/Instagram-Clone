@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -53,7 +54,7 @@ class MenuBtmSheet extends StatelessWidget {
                 padding: edgeInsets,
                 child: Row(
                   children: [
-                    Icon(Icons.access_time_rounded),
+                    Icon(Icons.query_stats_rounded),
                     SizedBox(width: 12),
                     Text("Your Activity", style: textStyle),
                   ],
@@ -63,7 +64,7 @@ class MenuBtmSheet extends StatelessWidget {
                 padding: edgeInsets,
                 child: Row(
                   children: [
-                    Icon(Icons.qr_code_rounded),
+                    Icon(Icons.qr_code_2_outlined),
                     SizedBox(width: 12),
                     Text("QR Code", style: textStyle),
                   ],
