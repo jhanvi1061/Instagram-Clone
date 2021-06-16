@@ -48,6 +48,14 @@ class Instagram extends StatelessWidget {
               headline6: TextStyle(color: Colors.black),
             ),
           ),
+          bottomSheetTheme: BottomSheetThemeData(
+            modalBackgroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(17),
+              ),
+            ),
+          ),
           bottomNavigationBarTheme:
               BottomNavigationBarThemeData(backgroundColor: Colors.white),
         ),
