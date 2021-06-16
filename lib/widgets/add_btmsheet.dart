@@ -53,7 +53,8 @@ class AddBtmSheet extends StatelessWidget {
                 padding: edgeInsets,
                 child: Row(
                   children: [
-                    SvgPicture.asset("assets/posts.svg", width: 21),
+                    SvgPicture.asset("assets/posts.svg",
+                        width: 21, color: Colors.black),
                     SizedBox(width: 15),
                     Text("Feed Post", style: textStyle),
                   ],
@@ -98,7 +99,8 @@ class AddBtmSheet extends StatelessWidget {
                 padding: edgeInsets,
                 child: Row(
                   children: [
-                    SvgPicture.asset("assets/ig_tv.svg", width: 21),
+                    SvgPicture.asset("assets/ig_tv.svg",
+                        width: 21, color: Colors.black),
                     SizedBox(width: 15),
                     Text("IGTV Video", style: textStyle),
                   ],
