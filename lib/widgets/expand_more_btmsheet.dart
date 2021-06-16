@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ExapndMoreBtmSheet extends StatelessWidget {
@@ -82,7 +83,7 @@ class ExapndMoreBtmSheet extends StatelessWidget {
                     width: 1.2,
                   ),
                 ),
-                child: Icon(Icons.add, size: 39),
+                child: Icon(CupertinoIcons.add, size: 36),
               ),
               SizedBox(width: 12),
               Text(
