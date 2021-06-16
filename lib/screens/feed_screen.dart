@@ -40,6 +40,7 @@ class FeedScreen extends StatelessWidget {
         children: [
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
+            physics: BouncingScrollPhysics(),
             child: Row(
               children: [
                 Padding(
@@ -70,8 +71,9 @@ class FeedScreen extends StatelessWidget {
                                 width: 19,
                                 height: 19,
                                 decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.white),
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                ),
                                 child: Icon(
                                   Icons.add_circle,
                                   color: Color(0xFF0494F5),
@@ -118,6 +120,7 @@ class FeedScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
+              physics: BouncingScrollPhysics(),
               shrinkWrap: true,
               itemCount: postsData.posts.length,
               itemBuilder: (context, i) => ChangeNotifierProvider.value(
