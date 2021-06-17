@@ -21,18 +21,9 @@ class FeedScreen extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SvgPicture.asset(
-              "assets/new_post.svg",
-              width: 23,
-            ),
-            Image.asset(
-              "assets/insta_logo.png",
-              width: 120,
-            ),
-            SvgPicture.asset(
-              "assets/messenger.svg",
-              width: 23,
-            ),
+            SvgPicture.asset("assets/new_post.svg", width: 23),
+            Image.asset("assets/insta_logo.png", width: 120),
+            SvgPicture.asset("assets/messenger.svg", width: 23),
           ],
         ),
       ),

@@ -11,10 +11,7 @@ class PostWidget extends StatefulWidget {
 }
 
 class _PostWidgetState extends State<PostWidget> {
-  var icon = SvgPicture.asset(
-    "assets/heart.svg",
-    width: 22,
-  );
+  var icon = SvgPicture.asset("assets/heart.svg", width: 22);
 
   void changeIcon() {
     setState(() {
@@ -88,21 +85,12 @@ class _PostWidgetState extends State<PostWidget> {
                     onTap: () => changeIcon(),
                   ),
                   SizedBox(width: 15),
-                  SvgPicture.asset(
-                    "assets/comment.svg",
-                    width: 20,
-                  ),
+                  SvgPicture.asset("assets/comment.svg", width: 20),
                   SizedBox(width: 15),
-                  SvgPicture.asset(
-                    "assets/share.svg",
-                    width: 20,
-                  ),
+                  SvgPicture.asset("assets/share.svg", width: 20),
                 ],
               ),
-              SvgPicture.asset(
-                "assets/save.svg",
-                width: 20,
-              ),
+              SvgPicture.asset("assets/save.svg", width: 20),
             ],
           ),
         ),
@@ -114,10 +102,7 @@ class _PostWidgetState extends State<PostWidget> {
               children: [
                 TextSpan(
                   text: "Liked by ",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
-                  ),
+                  style: TextStyle(fontSize: 15, color: Colors.black),
                 ),
                 TextSpan(
                   text: "_jhanvi_soni_ ",
@@ -163,10 +148,7 @@ class _PostWidgetState extends State<PostWidget> {
                 ),
                 TextSpan(
                   text: posts.caption,
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
-                  ),
+                  style: TextStyle(fontSize: 15, color: Colors.black),
                 ),
               ],
             ),

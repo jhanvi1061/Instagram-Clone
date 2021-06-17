@@ -1,13 +1,15 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:instagram_clone/providers/post.dart';
-import 'package:instagram_clone/widgets/add_btmsheet.dart';
-import 'package:instagram_clone/widgets/expand_more_btmsheet.dart';
-import 'package:instagram_clone/widgets/menu_btmsheet.dart';
-import 'package:instagram_clone/widgets/post_item.dart';
 import 'package:provider/provider.dart';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../providers/post.dart';
+import '../widgets/add_btmsheet.dart';
+import '../widgets/expand_more_btmsheet.dart';
+import '../widgets/menu_btmsheet.dart';
+import '../widgets/post_item.dart';
+import '../widgets/story_highlight.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -59,17 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     print("Build() - ProfileScreen");
     final postsData = Provider.of<PostProvider>(context);
     var textStyle = TextStyle(fontSize: 20, fontWeight: FontWeight.w800);
-    var widget = Padding(
-      padding: const EdgeInsets.only(bottom: 22.0),
-      child: Container(
-        width: 54,
-        height: 54,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.grey[200],
-        ),
-      ),
-    );
+
     return Builder(
       builder: (context) {
         return DefaultTabController(
@@ -94,20 +86,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               actions: [
                 IconButton(
-                  icon: SvgPicture.asset(
-                    "assets/new_post.svg",
-                    width: 23,
-                  ),
+                  icon: SvgPicture.asset("assets/new_post.svg", width: 23),
                   onPressed: () => _btmSheet2(context),
                 ),
                 SizedBox(width: 5),
                 Padding(
                   padding: const EdgeInsets.only(left: 2, right: 14),
                   child: GestureDetector(
-                    child: Icon(
-                      Icons.menu_rounded,
-                      size: 30,
-                    ),
+                    child: Icon(Icons.menu_rounded, size: 30),
                     onTap: () => _btmSheet3(context),
                   ),
                 ),
@@ -212,52 +198,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                if (_expanded)
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Keep your favorite stories on your profile"),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 12.0),
-                          child: Row(
-                            children: [
-                              Column(
-                                children: [
-                                  Container(
-                                    width: 54,
-                                    height: 54,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: Colors.grey[300],
-                                        width: 1.2,
-                                      ),
-                                    ),
-                                    child: Icon(CupertinoIcons.add, size: 36),
-                                  ),
-                                  SizedBox(height: 7),
-                                  Text(
-                                    "New",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(width: 26),
-                              widget,
-                              SizedBox(width: 26),
-                              widget,
-                              SizedBox(width: 26),
-                              widget,
-                              SizedBox(width: 26),
-                              widget,
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                if (_expanded) StoryHighlight(),
                 SizedBox(height: 10),
                 TabBar(
                   indicatorColor: Colors.black,
