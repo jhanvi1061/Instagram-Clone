@@ -37,7 +37,9 @@ class StoryHighlight extends StatelessWidget {
                           width: 1.2,
                         ),
                       ),
-                      child: Icon(CupertinoIcons.add, size: 36),
+                      child: Center(
+                        child: Icon(CupertinoIcons.add, size: 26),
+                      ),
                     ),
                     SizedBox(height: 7),
                     Text(

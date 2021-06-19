@@ -41,6 +41,7 @@ class Instagram extends StatelessWidget {
         home: HomeScreen(),
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
+          accentColor: Colors.white,
           appBarTheme: AppBarTheme(
             color: Colors.white,
             iconTheme: IconThemeData(color: Colors.black),

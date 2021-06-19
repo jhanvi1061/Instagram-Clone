@@ -155,27 +155,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 18),
                 OutlinedButton(
                   child: Text(
                     "Edit Profile",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 15,
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
                     ),
                   ),
                   style: OutlinedButton.styleFrom(
                     elevation: 0,
-                    minimumSize: Size(360, 36),
+                    minimumSize: Size(368, 36),
                     shape: RoundedRectangleBorder(
                       side: BorderSide(color: Colors.grey[300]),
-                      borderRadius: BorderRadius.all(Radius.circular(4)),
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
                     ),
                   ),
                   onPressed: () {},
                 ),
-                SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.only(left: 12, right: 12),
                   child: Row(
@@ -222,6 +221,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 Expanded(
                   child: TabBarView(
+                    physics: ClampingScrollPhysics(),
                     children: [
                       GridView.builder(
                         physics: BouncingScrollPhysics(),

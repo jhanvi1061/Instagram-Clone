@@ -1,4 +1,5 @@
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:instagram_clone/widgets/more_btmsheet.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
@@ -21,6 +22,15 @@ class _PostWidgetState extends State<PostWidget> {
         color: Colors.red,
       );
     });
+  }
+
+  Future _btmSheet(context) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return MoreBtmSheet();
+      },
+    );
   }
 
   @override
@@ -55,7 +65,10 @@ class _PostWidgetState extends State<PostWidget> {
                   )
                 ],
               ),
-              Icon(Icons.more_vert),
+              IconButton(
+                icon: Icon(Icons.more_vert),
+                onPressed: () => _btmSheet(context),
+              ),
             ],
           ),
         ),
@@ -162,43 +175,43 @@ class _PostWidgetState extends State<PostWidget> {
             style: TextStyle(
               color: Colors.black.withOpacity(0.4),
               fontSize: 15,
-              fontWeight: FontWeight.w500,
+              // fontWeight: FontWeight.w500,
             ),
           ),
         ),
-        SizedBox(height: 12),
-        Padding(
-          padding: EdgeInsets.only(left: 15, right: 15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    width: 30,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: NetworkImage(posts.profileImg),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    "Add a comment...",
-                    style: TextStyle(
-                      color: Colors.black.withOpacity(0.4),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+        // SizedBox(height: 12),
+        // Padding(
+        //   padding: EdgeInsets.only(left: 15, right: 15),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //     children: [
+        //       Row(
+        //         children: [
+        //           Container(
+        //             width: 30,
+        //             height: 30,
+        //             decoration: BoxDecoration(
+        //               shape: BoxShape.circle,
+        //               image: DecorationImage(
+        //                 image: NetworkImage(posts.profileImg),
+        //                 fit: BoxFit.cover,
+        //               ),
+        //             ),
+        //           ),
+        //           SizedBox(width: 10),
+        //           Text(
+        //             "Add a comment...",
+        //             style: TextStyle(
+        //               color: Colors.black.withOpacity(0.4),
+        //               fontSize: 15,
+        //               fontWeight: FontWeight.w500,
+        //             ),
+        //           ),
+        //         ],
+        //       ),
+        //     ],
+        //   ),
+        // ),
         SizedBox(height: 8),
         Padding(
           padding: EdgeInsets.only(left: 15, right: 15),
@@ -206,8 +219,8 @@ class _PostWidgetState extends State<PostWidget> {
             "1 day ago",
             style: TextStyle(
               color: Colors.black.withOpacity(0.4),
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
+              fontSize: 11,
+              // fontWeight: FontWeight.w400,
             ),
           ),
         ),
