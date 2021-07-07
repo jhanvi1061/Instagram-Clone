@@ -75,4 +75,10 @@ class PostProvider with ChangeNotifier {
   ];
 
   List<Post> get posts => [..._posts];
+
+  Post findById(String id) {
+    int index = _posts.indexWhere((post) => post.id == id);
+    if (index >= 0) return _posts[index];
+    return null;
+  }
 }
