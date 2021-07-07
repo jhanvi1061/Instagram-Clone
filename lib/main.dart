@@ -1,3 +1,4 @@
+import 'package:instagram_clone/screens/specific_post_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
@@ -39,6 +40,20 @@ class Instagram extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Instagram',
         home: HomeScreen(),
+        initialRoute: '/',
+        onGenerateRoute: (settings) {
+          final path = settings.name;
+          print(path);
+          print(path.split('/'));
+          if (path.split('/')[1] == 'p') {
+            return MaterialPageRoute(
+              builder: (context) => SpecificPostscreen(
+                id: path.split('/')[2],
+              ),
+            );
+          }
+          return null;
+        },
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
           accentColor: Colors.white,
