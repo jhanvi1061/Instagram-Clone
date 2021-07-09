@@ -11,7 +11,19 @@ class ActivityScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'With ♥ by ',
+            'With ',
+            style: TextStyle(
+              fontSize: 26,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          Icon(
+            Icons.favorite,
+            color: Colors.red,
+            size: 32,
+          ),
+          Text(
+            ' by ',
             style: TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.w500,

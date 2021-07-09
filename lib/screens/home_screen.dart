@@ -134,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onLongPress: () => _btmSheet(context),
                 child: CircleAvatar(
                   radius: 12,
-                  backgroundImage: AssetImage("assets/jhanvi.JPG"),
+                  backgroundImage: AssetImage("assets/avatar.png"),
                 ),
               ),
               activeIcon: GestureDetector(
@@ -146,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   child: CircleAvatar(
                     radius: 11,
-                    backgroundImage: AssetImage("assets/jhanvi.JPG"),
+                    backgroundImage: AssetImage("assets/avatar.png"),
                   ),
                 ),
               ),

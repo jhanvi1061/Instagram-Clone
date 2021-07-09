@@ -24,11 +24,11 @@ class _PostWidgetState extends State<PostWidget> {
     });
   }
 
-  Future _btmSheet(context) {
+  Future _btmSheet(context, String id) {
     return showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return MoreBtmSheet();
+        return MoreBtmSheet(id: id);
       },
     );
   }
@@ -41,7 +41,7 @@ class _PostWidgetState extends State<PostWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -67,20 +67,23 @@ class _PostWidgetState extends State<PostWidget> {
               ),
               IconButton(
                 icon: Icon(Icons.more_vert),
-                onPressed: () => _btmSheet(context),
+                onPressed: () => _btmSheet(context, posts.id),
               ),
             ],
           ),
         ),
         GestureDetector(
           onDoubleTap: () => changeIcon(),
-          child: Container(
-            width: double.infinity,
-            height: 340,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(posts.postImg),
-                fit: BoxFit.cover,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 6.0),
+            child: Container(
+              width: double.infinity,
+              height: 360,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(posts.postImg),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -118,7 +121,7 @@ class _PostWidgetState extends State<PostWidget> {
                   style: TextStyle(fontSize: 15, color: Colors.black),
                 ),
                 TextSpan(
-                  text: "_jhanvi_soni_ ",
+                  text: "abc ",
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w700,

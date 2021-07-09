@@ -52,7 +52,7 @@ class FeedScreen extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   image: DecorationImage(
-                                    image: AssetImage("assets/jhanvi.JPG"),
+                                    image: AssetImage("assets/avatar.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
