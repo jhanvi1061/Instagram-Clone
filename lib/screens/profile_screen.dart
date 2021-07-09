@@ -1,4 +1,5 @@
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:instagram_clone/screens/specific_post_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter/cupertino.dart';
@@ -61,7 +62,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     print("Build() - ProfileScreen");
     final postsData = Provider.of<PostProvider>(context);
     var textStyle = TextStyle(fontSize: 20, fontWeight: FontWeight.w800);
-
     return Builder(
       builder: (context) {
         return DefaultTabController(
@@ -75,8 +75,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Icon(CupertinoIcons.lock),
                   SizedBox(width: 5),
                   Text(
-                    "_jhanvi_soni_",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                    "_the_anonymous_",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
                   ),
                   GestureDetector(
                     child: Icon(Icons.expand_more),
@@ -113,7 +113,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                image: AssetImage("assets/jhanvi.JPG"),
+                                image: AssetImage("assets/avatar.png"),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -131,7 +131,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       SizedBox(width: 40),
                       Column(
                         children: [
-                          Text("22", style: textStyle),
+                          Text("8", style: textStyle),
                           SizedBox(height: 5),
                           Text("Posts"),
                         ],
@@ -139,7 +139,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       SizedBox(width: 30),
                       Column(
                         children: [
-                          Text("283", style: textStyle),
+                          Text("280", style: textStyle),
                           SizedBox(height: 5),
                           Text("Followers"),
                         ],
@@ -227,10 +227,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         physics: BouncingScrollPhysics(),
                         padding: const EdgeInsets.only(top: 2),
                         itemCount: postsData.posts.length,
-                        itemBuilder: (context, i) =>
-                            ChangeNotifierProvider.value(
-                          value: postsData.posts[i],
-                          child: PostItem(),
+                        itemBuilder: (context, i) => Hero(
+                          tag: postsData.posts[i].id,
+                          child: ChangeNotifierProvider.value(
+                            value: postsData.posts[i],
+                            child: GestureDetector(
+                              child: PostItem(),
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return SpecificPostscreen(
+                                          id: postsData.posts[i].id);
+                                    },
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
                         ),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,

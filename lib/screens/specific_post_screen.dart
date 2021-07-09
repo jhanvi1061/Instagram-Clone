@@ -14,11 +14,11 @@ class SpecificPostscreen extends StatefulWidget {
 }
 
 class _SpecificPostscreenState extends State<SpecificPostscreen> {
-  Future _btmSheet(context) {
+  Future _btmSheet(context, String id) {
     return showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return MoreBtmSheet();
+        return MoreBtmSheet(id: id);
       },
     );
   }
@@ -41,6 +41,18 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Posts",
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w700,
+            color: Colors.black,
+          ),
+        ),
+        elevation: 0,
+        toolbarHeight: 48,
+      ),
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
           : post == null
@@ -85,20 +97,23 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
                           ),
                           IconButton(
                             icon: Icon(Icons.more_vert),
-                            onPressed: () => _btmSheet(context),
+                            onPressed: () => _btmSheet(context, post.id),
                           ),
                         ],
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 6.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: 360,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(post.postImg),
-                            fit: BoxFit.cover,
+                      child: Hero(
+                        tag: post.id,
+                        child: Container(
+                          width: double.infinity,
+                          height: 360,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage(post.postImg),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -112,8 +127,11 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
                         children: [
                           Row(
                             children: [
-                              SvgPicture.asset("assets/heart_active.svg",
-                                  width: 20),
+                              SvgPicture.asset(
+                                "assets/heart_active.svg",
+                                width: 20,
+                                color: Colors.red,
+                              ),
                               SizedBox(width: 15),
                               SvgPicture.asset("assets/comment.svg", width: 20),
                               SizedBox(width: 15),
@@ -136,7 +154,7 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
                                   TextStyle(fontSize: 15, color: Colors.black),
                             ),
                             TextSpan(
-                              text: "_jhanvi_soni_ ",
+                              text: "abc ",
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w700,

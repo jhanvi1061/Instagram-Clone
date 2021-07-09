@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MoreBtmSheet extends StatelessWidget {
+  final String id;
+
+  const MoreBtmSheet({this.id});
+
   @override
   Widget build(BuildContext context) {
     var textStyle = TextStyle(fontSize: 16, fontWeight: FontWeight.w400);
@@ -41,7 +46,25 @@ class MoreBtmSheet extends StatelessWidget {
               SizedBox(height: 10),
               Padding(
                 padding: edgeInsets,
-                child: Text("Copy Link", style: textStyle),
+                child: GestureDetector(
+                  child: Text("Copy Link", style: textStyle),
+                  onTap: () async {
+                    await Clipboard.setData(
+                      ClipboardData(
+                        text: 'https://instagram-byjhanvi.web.app/#/p/$id',
+                      ),
+                    ).then((_) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Link Copied"),
+                          behavior: SnackBarBehavior.floating,
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
+                      Navigator.pop(context);
+                    });
+                  },
+                ),
               ),
               SizedBox(height: 10),
               Padding(
