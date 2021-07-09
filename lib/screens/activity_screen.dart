@@ -10,29 +10,29 @@ class ActivityScreen extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
+          const Text(
             'With ',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.w500,
             ),
           ),
-          Icon(
+          const Icon(
             Icons.favorite,
             color: Colors.red,
             size: 32,
           ),
-          Text(
+          const Text(
             ' by ',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.w500,
             ),
           ),
           GestureDetector(
-            child: Text(
+            child: const Text(
               'Jhanvi Soni',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 26,
                 fontWeight: FontWeight.w500,
                 decoration: TextDecoration.underline,

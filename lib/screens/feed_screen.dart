@@ -33,7 +33,7 @@ class FeedScreen extends StatelessWidget {
           children: [
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Row(
                 children: [
                   Padding(
@@ -49,10 +49,11 @@ class FeedScreen extends StatelessWidget {
                               Container(
                                 width: 66,
                                 height: 66,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                    image: AssetImage("assets/avatar.png"),
+                                  image: const DecorationImage(
+                                    image:
+                                        const AssetImage("assets/avatar.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -63,11 +64,11 @@ class FeedScreen extends StatelessWidget {
                                 child: Container(
                                   width: 19,
                                   height: 19,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: Colors.white,
                                   ),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.add_circle,
                                     color: Color(0xFF0494F5),
                                     size: 19,
@@ -77,12 +78,12 @@ class FeedScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(height: 9),
+                        const SizedBox(height: 9),
                         Center(
-                          child: Text(
+                          child: const Text(
                             "Your Story",
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(fontSize: 12),
+                            style: const TextStyle(fontSize: 12),
                           ),
                         ),
                       ],

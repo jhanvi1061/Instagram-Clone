@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 class MenuBtmSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var textStyle = TextStyle(fontSize: 16, fontWeight: FontWeight.w400);
+    print("Build() - MenuBtmSheet");
+    var textStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.w400);
     const edgeInsets = const EdgeInsets.all(10.0);
     return Wrap(
       children: [
@@ -18,9 +19,9 @@ class MenuBtmSheet extends StatelessWidget {
               width: 38,
               decoration: BoxDecoration(
                 color: Colors.grey[400],
-                borderRadius: BorderRadius.horizontal(
-                  left: Radius.circular(10),
-                  right: Radius.circular(10),
+                borderRadius: const BorderRadius.horizontal(
+                  left: const Radius.circular(10),
+                  right: const Radius.circular(10),
                 ),
               ),
             ),
@@ -35,7 +36,7 @@ class MenuBtmSheet extends StatelessWidget {
                 child: Row(
                   children: [
                     SvgPicture.asset("assets/options.svg", width: 21),
-                    SizedBox(width: 15),
+                    const SizedBox(width: 15),
                     Text("Settings", style: textStyle),
                   ],
                 ),
@@ -44,8 +45,8 @@ class MenuBtmSheet extends StatelessWidget {
                 padding: edgeInsets,
                 child: Row(
                   children: [
-                    Icon(Icons.restore_rounded),
-                    SizedBox(width: 12),
+                    const Icon(Icons.restore_rounded),
+                    const SizedBox(width: 12),
                     Text("Archive", style: textStyle),
                   ],
                 ),
@@ -54,8 +55,8 @@ class MenuBtmSheet extends StatelessWidget {
                 padding: edgeInsets,
                 child: Row(
                   children: [
-                    Icon(Icons.query_stats_rounded),
-                    SizedBox(width: 12),
+                    const Icon(Icons.query_stats_rounded),
+                    const SizedBox(width: 12),
                     Text("Your Activity", style: textStyle),
                   ],
                 ),
@@ -64,8 +65,8 @@ class MenuBtmSheet extends StatelessWidget {
                 padding: edgeInsets,
                 child: Row(
                   children: [
-                    Icon(Icons.qr_code_2_outlined),
-                    SizedBox(width: 12),
+                    const Icon(Icons.qr_code_2_outlined),
+                    const SizedBox(width: 12),
                     Text("QR Code", style: textStyle),
                   ],
                 ),
@@ -75,7 +76,7 @@ class MenuBtmSheet extends StatelessWidget {
                 child: Row(
                   children: [
                     SvgPicture.asset("assets/save.svg", width: 21),
-                    SizedBox(width: 15),
+                    const SizedBox(width: 15),
                     Text("Saved", style: textStyle),
                   ],
                 ),
@@ -84,8 +85,8 @@ class MenuBtmSheet extends StatelessWidget {
                 padding: edgeInsets,
                 child: Row(
                   children: [
-                    Icon(Icons.list_rounded),
-                    SizedBox(width: 12),
+                    const Icon(Icons.list_rounded),
+                    const SizedBox(width: 12),
                     Text("Close Friends", style: textStyle),
                   ],
                 ),
@@ -95,7 +96,7 @@ class MenuBtmSheet extends StatelessWidget {
                 child: Row(
                   children: [
                     SvgPicture.asset("assets/discover_people.svg", width: 21),
-                    SizedBox(width: 15),
+                    const SizedBox(width: 15),
                     Text("Discover People", style: textStyle),
                   ],
                 ),

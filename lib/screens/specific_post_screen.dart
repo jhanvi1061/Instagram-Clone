@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:instagram_clone/providers/post.dart';
-import 'package:instagram_clone/widgets/more_btmsheet.dart';
 import 'package:provider/provider.dart';
+
+import 'package:flutter/material.dart';
+
+import '../providers/post.dart';
+import '../widgets/more_btmsheet.dart';
 
 class SpecificPostscreen extends StatefulWidget {
   final String id;
@@ -40,11 +42,12 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
 
   @override
   Widget build(BuildContext context) {
+    print("Build() - SpecificPostScreen");
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Posts",
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w700,
             color: Colors.black,
@@ -54,12 +57,12 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
         toolbarHeight: 48,
       ),
       body: _isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : post == null
-              ? Center(
-                  child: Text(
+              ? const Center(
+                  child: const Text(
                     "No post found!!",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: Colors.black,
@@ -87,16 +90,16 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 10),
+                              const SizedBox(width: 10),
                               Text(
                                 post.postOwnerName,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.w500),
                               )
                             ],
                           ),
                           IconButton(
-                            icon: Icon(Icons.more_vert),
+                            icon: const Icon(Icons.more_vert),
                             onPressed: () => _btmSheet(context, post.id),
                           ),
                         ],
@@ -118,7 +121,7 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Padding(
                       padding:
                           const EdgeInsets.only(left: 15, right: 15, top: 2),
@@ -132,9 +135,9 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
                                 width: 20,
                                 color: Colors.red,
                               ),
-                              SizedBox(width: 15),
+                              const SizedBox(width: 15),
                               SvgPicture.asset("assets/comment.svg", width: 20),
-                              SizedBox(width: 15),
+                              const SizedBox(width: 15),
                               SvgPicture.asset("assets/share.svg", width: 20),
                             ],
                           ),
@@ -142,36 +145,36 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Padding(
                       padding: const EdgeInsets.only(left: 15, right: 15),
                       child: RichText(
-                        text: TextSpan(
+                        text: const TextSpan(
                           children: [
-                            TextSpan(
+                            const TextSpan(
                               text: "Liked by ",
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.black),
+                              style: const TextStyle(
+                                  fontSize: 15, color: Colors.black),
                             ),
-                            TextSpan(
+                            const TextSpan(
                               text: "abc ",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.black,
                               ),
                             ),
-                            TextSpan(
+                            const TextSpan(
                               text: "and ",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.black,
                               ),
                             ),
-                            TextSpan(
+                            const TextSpan(
                               text: "12 Others",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.black,
@@ -181,15 +184,15 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Padding(
-                      padding: EdgeInsets.only(left: 15, right: 15),
+                      padding: const EdgeInsets.only(left: 15, right: 15),
                       child: RichText(
                         text: TextSpan(
                           children: [
                             TextSpan(
                               text: post.postOwnerName,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.black,
@@ -197,25 +200,25 @@ class _SpecificPostscreenState extends State<SpecificPostscreen> {
                             ),
                             TextSpan(
                               text: post.caption,
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.black),
+                              style: const TextStyle(
+                                  fontSize: 15, color: Colors.black),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Padding(
-                      padding: EdgeInsets.only(left: 15, right: 15),
+                      padding: const EdgeInsets.only(left: 15, right: 15),
                       child: Text(
                         "View all 12 comments",
                         style: TextStyle(
                             color: Colors.black.withOpacity(0.4), fontSize: 15),
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Padding(
-                      padding: EdgeInsets.only(left: 15, right: 15),
+                      padding: const EdgeInsets.only(left: 15, right: 15),
                       child: Text(
                         "1 day ago",
                         style: TextStyle(

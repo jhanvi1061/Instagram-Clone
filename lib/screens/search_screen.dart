@@ -5,7 +5,7 @@ class SearhScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print("Build() - SearchScreen");
     return Center(
-      child: Text("Search Screen"),
+      child: const Text("Search Screen"),
     );
   }
 }

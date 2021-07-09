@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 class StoryHighlight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print("Build() - StoryHighlight");
     var widget = Padding(
       padding: const EdgeInsets.only(bottom: 22.0),
       child: Container(
@@ -20,7 +21,7 @@ class StoryHighlight extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Keep your favorite stories on your profile"),
+          const Text("Keep your favorite stories on your profile"),
           Padding(
             padding: const EdgeInsets.only(top: 12.0),
             child: Row(
@@ -37,24 +38,21 @@ class StoryHighlight extends StatelessWidget {
                           width: 1.2,
                         ),
                       ),
-                      child: Center(
-                        child: Icon(CupertinoIcons.add, size: 26),
+                      child: const Center(
+                        child: const Icon(CupertinoIcons.add, size: 26),
                       ),
                     ),
-                    SizedBox(height: 7),
-                    Text(
-                      "New",
-                      style: TextStyle(fontSize: 12),
-                    ),
+                    const SizedBox(height: 7),
+                    const Text("New", style: const TextStyle(fontSize: 12)),
                   ],
                 ),
-                SizedBox(width: 26),
+                const SizedBox(width: 26),
                 widget,
-                SizedBox(width: 26),
+                const SizedBox(width: 26),
                 widget,
-                SizedBox(width: 26),
+                const SizedBox(width: 26),
                 widget,
-                SizedBox(width: 26),
+                const SizedBox(width: 26),
                 widget,
               ],
             ),

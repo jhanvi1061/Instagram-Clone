@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //       ),
               icon: GestureDetector(
                 onLongPress: () => _btmSheet(context),
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   radius: 12,
                   backgroundImage: AssetImage("assets/avatar.png"),
                 ),
@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     shape: BoxShape.circle,
                     border: Border.all(width: 1.8),
                   ),
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 11,
                     backgroundImage: AssetImage("assets/avatar.png"),
                   ),

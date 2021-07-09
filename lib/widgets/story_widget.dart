@@ -16,14 +16,14 @@ class StoryWidget extends StatelessWidget {
           Container(
             width: 70,
             height: 70,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color(0xFF9B2282),
-                  Color(0xFFEEA863),
+                  const Color(0xFF9B2282),
+                  const Color(0xFFEEA863),
                 ],
               ),
             ),
@@ -46,12 +46,12 @@ class StoryWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 6),
+          const SizedBox(height: 6),
           Center(
             child: Text(
               story.username,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 12),
+              style: const TextStyle(fontSize: 12),
             ),
           )
         ],

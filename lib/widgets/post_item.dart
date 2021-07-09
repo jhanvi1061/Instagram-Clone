@@ -7,6 +7,7 @@ import '../providers/post.dart';
 class PostItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print("Build() - PostItem");
     final posts = Provider.of<Post>(context);
     return Container(
       child: Image.network(

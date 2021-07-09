@@ -8,7 +8,8 @@ class MoreBtmSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var textStyle = TextStyle(fontSize: 16, fontWeight: FontWeight.w400);
+    print("Build() - MoreBtmSheet");
+    var textStyle = const TextStyle(fontSize: 16, fontWeight: FontWeight.w400);
     const edgeInsets = const EdgeInsets.all(10.0);
     return Wrap(
       children: [
@@ -21,9 +22,9 @@ class MoreBtmSheet extends StatelessWidget {
               width: 38,
               decoration: BoxDecoration(
                 color: Colors.grey[400],
-                borderRadius: BorderRadius.horizontal(
-                  left: Radius.circular(10),
-                  right: Radius.circular(10),
+                borderRadius: const BorderRadius.horizontal(
+                  left: const Radius.circular(10),
+                  right: const Radius.circular(10),
                 ),
               ),
             ),
@@ -38,12 +39,12 @@ class MoreBtmSheet extends StatelessWidget {
                 padding: edgeInsets,
                 child: Text("Report...", style: textStyle),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: edgeInsets,
                 child: Text("Turn on Post Notifications", style: textStyle),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: edgeInsets,
                 child: GestureDetector(
@@ -56,9 +57,9 @@ class MoreBtmSheet extends StatelessWidget {
                     ).then((_) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text("Link Copied"),
+                          content: const Text("Link Copied"),
                           behavior: SnackBarBehavior.floating,
-                          duration: Duration(seconds: 2),
+                          duration: const Duration(seconds: 2),
                         ),
                       );
                       Navigator.pop(context);
@@ -66,17 +67,17 @@ class MoreBtmSheet extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: edgeInsets,
                 child: Text("Share to...", style: textStyle),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: edgeInsets,
                 child: Text("Unfollow", style: textStyle),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: edgeInsets,
                 child: Text("Mute", style: textStyle),

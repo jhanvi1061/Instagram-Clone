@@ -1,10 +1,10 @@
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:instagram_clone/screens/specific_post_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/specific_post_screen.dart';
 import '../providers/post.dart';
 import '../widgets/add_btmsheet.dart';
 import '../widgets/expand_more_btmsheet.dart';
@@ -61,7 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     print("Build() - ProfileScreen");
     final postsData = Provider.of<PostProvider>(context);
-    var textStyle = TextStyle(fontSize: 20, fontWeight: FontWeight.w800);
+    var textStyle = const TextStyle(fontSize: 20, fontWeight: FontWeight.w800);
     return Builder(
       builder: (context) {
         return DefaultTabController(
@@ -72,14 +72,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
               elevation: 0,
               title: Row(
                 children: [
-                  Icon(CupertinoIcons.lock),
-                  SizedBox(width: 5),
+                  const Icon(CupertinoIcons.lock),
+                  const SizedBox(width: 5),
                   Text(
                     "_the_anonymous_",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                    style: textStyle,
                   ),
                   GestureDetector(
-                    child: Icon(Icons.expand_more),
+                    child: const Icon(Icons.expand_more),
                     onTap: () => _btmSheet1(context),
                   ),
                 ],
@@ -89,11 +89,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   icon: SvgPicture.asset("assets/new_post.svg", width: 23),
                   onPressed: () => _btmSheet2(context),
                 ),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 Padding(
                   padding: const EdgeInsets.only(left: 2, right: 14),
                   child: GestureDetector(
-                    child: Icon(Icons.menu_rounded, size: 30),
+                    child: const Icon(Icons.menu_rounded, size: 30),
                     onTap: () => _btmSheet3(context),
                   ),
                 ),
@@ -110,54 +110,54 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Container(
                             width: 85,
                             height: 85,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: AssetImage("assets/avatar.png"),
+                              image: const DecorationImage(
+                                image: const AssetImage("assets/avatar.png"),
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                          SizedBox(height: 10),
-                          Center(
-                            child: Text(
+                          const SizedBox(height: 10),
+                          const Center(
+                            child: const Text(
                               "Jhanvi Soni",
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(width: 40),
+                      const SizedBox(width: 40),
                       Column(
                         children: [
                           Text("8", style: textStyle),
-                          SizedBox(height: 5),
-                          Text("Posts"),
+                          const SizedBox(height: 5),
+                          const Text("Posts"),
                         ],
                       ),
-                      SizedBox(width: 30),
+                      const SizedBox(width: 30),
                       Column(
                         children: [
                           Text("280", style: textStyle),
-                          SizedBox(height: 5),
-                          Text("Followers"),
+                          const SizedBox(height: 5),
+                          const Text("Followers"),
                         ],
                       ),
-                      SizedBox(width: 30),
+                      const SizedBox(width: 30),
                       Column(
                         children: [
                           Text("330", style: textStyle),
-                          SizedBox(height: 5),
-                          Text("Following"),
+                          const SizedBox(height: 5),
+                          const Text("Following"),
                         ],
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 18),
+                const SizedBox(height: 18),
                 OutlinedButton(
-                  child: Text(
+                  child: const Text(
                     "Edit Profile",
                     style: TextStyle(
                       fontSize: 15,
@@ -170,7 +170,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     minimumSize: Size(368, 36),
                     shape: RoundedRectangleBorder(
                       side: BorderSide(color: Colors.grey[300]),
-                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      borderRadius: const BorderRadius.all(Radius.circular(5)),
                     ),
                   ),
                   onPressed: () {},
@@ -180,51 +180,51 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Story Highlights",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 15, fontWeight: FontWeight.w700),
                       ),
                       IconButton(
                         icon: Icon(
                             _expanded ? Icons.expand_less : Icons.expand_more),
                         onPressed: () {
-                          setState(() {
-                            _expanded = !_expanded;
-                          });
+                          setState(() => _expanded = !_expanded);
                         },
                       ),
                     ],
                   ),
                 ),
                 if (_expanded) StoryHighlight(),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 TabBar(
                   indicatorColor: Colors.black,
                   indicatorWeight: 1.0,
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   onTap: _selectTab,
                   tabs: [
                     Tab(
-                      icon: SvgPicture.asset("assets/posts.svg",
-                          width: 23,
-                          color:
-                              _currentIndex == 0 ? Colors.black : Colors.grey),
+                      icon: SvgPicture.asset(
+                        "assets/posts.svg",
+                        width: 23,
+                        color: _currentIndex == 0 ? Colors.black : Colors.grey,
+                      ),
                     ),
                     Tab(
-                      icon: SvgPicture.asset("assets/tagged.svg",
-                          width: 23,
-                          color:
-                              _currentIndex == 1 ? Colors.black : Colors.grey),
+                      icon: SvgPicture.asset(
+                        "assets/tagged.svg",
+                        width: 23,
+                        color: _currentIndex == 1 ? Colors.black : Colors.grey,
+                      ),
                     ),
                   ],
                 ),
                 Expanded(
                   child: TabBarView(
-                    physics: ClampingScrollPhysics(),
+                    physics: const ClampingScrollPhysics(),
                     children: [
                       GridView.builder(
-                        physics: BouncingScrollPhysics(),
+                        physics: const BouncingScrollPhysics(),
                         padding: const EdgeInsets.only(top: 2),
                         itemCount: postsData.posts.length,
                         itemBuilder: (context, i) => Hero(
@@ -246,14 +246,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                         ),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,
                           crossAxisSpacing: 2,
                           mainAxisSpacing: 2,
                         ),
                       ),
-                      Center(
-                        child: Text("No tagged posts yet..."),
+                      const Center(
+                        child: const Text("No tagged posts yet..."),
                       ),
                     ],
                   ),

@@ -1,4 +1,3 @@
-import 'package:instagram_clone/screens/specific_post_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
@@ -7,6 +6,7 @@ import 'package:flutter/services.dart';
 import './providers/post.dart';
 import './providers/story.dart';
 import './screens/home_screen.dart';
+import './screens/specific_post_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -57,23 +57,24 @@ class Instagram extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
           accentColor: Colors.white,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             color: Colors.white,
-            iconTheme: IconThemeData(color: Colors.black),
-            textTheme: TextTheme(
-              headline6: TextStyle(color: Colors.black),
+            iconTheme: const IconThemeData(color: Colors.black),
+            textTheme: const TextTheme(
+              headline6: const TextStyle(color: Colors.black),
             ),
           ),
-          bottomSheetTheme: BottomSheetThemeData(
+          bottomSheetTheme: const BottomSheetThemeData(
             modalBackgroundColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(17),
+            shape: const RoundedRectangleBorder(
+              borderRadius: const BorderRadius.vertical(
+                top: const Radius.circular(17),
               ),
             ),
           ),
-          bottomNavigationBarTheme:
-              BottomNavigationBarThemeData(backgroundColor: Colors.white),
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+            backgroundColor: Colors.white,
+          ),
         ),
       ),
     );
