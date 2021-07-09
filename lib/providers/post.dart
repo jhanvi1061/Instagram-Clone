@@ -20,57 +20,75 @@ class PostProvider with ChangeNotifier {
   List<Post> _posts = [
     Post(
       id: "1",
-      postOwnerName: "_p7_",
+      postOwnerName: "Olive",
       profileImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p7.webp',
+          'https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png',
       postImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p7.webp',
-      caption: " Good day",
+          'https://cdn.pixabay.com/photo/2016/02/18/18/37/puppy-1207816__340.jpg',
+      caption: " Cute puppy",
     ),
     Post(
       id: "2",
-      postOwnerName: "_p8_",
+      postOwnerName: "Ben",
       profileImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p8.webp',
+          'https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png',
       postImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p8.webp',
-      caption: " Good day",
+          'https://cdn.pixabay.com/photo/2016/11/14/04/45/elephant-1822636_960_720.jpg',
+      caption: " Giant elephant",
     ),
     Post(
       id: "3",
-      postOwnerName: "_p9_",
+      postOwnerName: "Jen",
       profileImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p9.webp',
+          'https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png',
       postImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p9.webp',
-      caption: " Good day",
+          'https://cdn.pixabay.com/photo/2012/09/15/02/22/forest-56930__340.jpg',
+      caption: " Scenery",
     ),
     Post(
       id: "4",
-      postOwnerName: "_p10_",
+      postOwnerName: "Anna",
       profileImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p10.webp',
+          'https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png',
       postImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p10.webp',
-      caption: " Good day",
+          'https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989__340.jpg',
+      caption: " Clouds",
     ),
     Post(
       id: "5",
-      postOwnerName: "_p11_",
+      postOwnerName: "Cherry",
       profileImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p11.webp',
+          'https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png',
       postImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p11.webp',
-      caption: " Good day",
+          'https://media.istockphoto.com/photos/eiffel-tower-picture-id961490712?b=1&k=6&m=961490712&s=170667a&w=0&h=jx4fkV9e_Qz7KbtwRGxqaYxJmLKN1eH9GMOWYcwiLoY=',
+      caption: " Eiffel Tower",
     ),
     Post(
       id: "6",
-      postOwnerName: "_p12_",
+      postOwnerName: "Olive",
       profileImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p12.webp',
+          'https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png',
       postImg:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p12.webp',
-      caption: " Good day",
+          'https://cdn.pixabay.com/photo/2013/04/04/12/34/mountains-100367__340.jpg',
+      caption: " Awesome sunset",
+    ),
+    Post(
+      id: "7",
+      postOwnerName: "John",
+      profileImg:
+          'https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png',
+      postImg:
+          'https://media.istockphoto.com/photos/tourists-sitting-near-campfire-under-starry-sky-picture-id1213691432?b=1&k=6&m=1213691432&s=170667a&w=0&h=IZYW6cUQYRyeTUcWta1a5Rxu6ULG728AzY-6JClQACE=',
+      caption: " Camping",
+    ),
+    Post(
+      id: "8",
+      postOwnerName: "Anna",
+      profileImg:
+          'https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png',
+      postImg:
+          'https://cdn.pixabay.com/photo/2017/07/10/21/16/aurora-2491595__340.jpg',
+      caption: " Aurora Borealis",
     ),
   ];
 

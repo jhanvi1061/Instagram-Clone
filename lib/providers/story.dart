@@ -16,39 +16,39 @@ class StoryProvider with ChangeNotifier {
   List<Story> _stories = [
     Story(
       id: "1",
-      username: "_p1_",
+      username: "Anna",
       imageUrl:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p1.webp',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtxwBGpoFONlCRbZw5zEvhbhNJwxkDHrSV_A&usqp=CAU',
     ),
     Story(
       id: "2",
-      username: "_p2_",
+      username: "John",
       imageUrl:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p2.webp',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtxwBGpoFONlCRbZw5zEvhbhNJwxkDHrSV_A&usqp=CAU',
     ),
     Story(
       id: "3",
-      username: "_p3_",
+      username: "Cherry",
       imageUrl:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p3.webp',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtxwBGpoFONlCRbZw5zEvhbhNJwxkDHrSV_A&usqp=CAU',
     ),
     Story(
       id: "4",
-      username: "_p4_",
+      username: "Jen",
       imageUrl:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p4.webp',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtxwBGpoFONlCRbZw5zEvhbhNJwxkDHrSV_A&usqp=CAU',
     ),
     Story(
       id: "5",
-      username: "_p5_",
+      username: "Ben",
       imageUrl:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p5.webp',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtxwBGpoFONlCRbZw5zEvhbhNJwxkDHrSV_A&usqp=CAU',
     ),
     Story(
       id: "6",
-      username: "_p6_",
+      username: "Anna",
       imageUrl:
-          'https://raw.githubusercontent.com/jhanvi1061/Shop-App/master/web%20assests/p6.webp',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtxwBGpoFONlCRbZw5zEvhbhNJwxkDHrSV_A&usqp=CAU',
     ),
   ];
 
